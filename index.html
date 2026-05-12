@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Airlines | PTFS Virtual</title>
+    <!-- Favicon (Ikon di Tab Browser) -->
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Singapore_Airlines_Logo_2.svg/1200px-Singapore_Airlines_Logo_2.svg.png">
+    
+    <style>
+        :root {
+            --sia-blue: #00235d;
+            --sia-gold: #c69214;
+            --sia-dark: #00153a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            /* Watermark Logo Background */
+            background-image: url('https://d.uguu.se/yNeSLuHD.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 110% 110%;
+            background-size: 600px;
+        }
+
+        /* Top Bar Kecil */
+        .top-strip {
+            background: var(--sia-gold);
+            height: 5px;
+            width: 100%;
+        }
+
+        header {
+            background-color: var(--sia-blue);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .main-logo {
+            max-width: 300px;
+            filter: drop-shadow(0 4px 5px rgba(0,0,0,0.3));
+        }
+
+        nav {
+            background: var(--sia-dark);
+            padding: 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--sia-gold);
+        }
+
+        /* Logo Kecil di Navigasi */
+        .nav-logo {
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--sia-gold); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 35, 93, 0.7), rgba(0, 21, 58, 0.9)), 
+                        url('https://images.unsplash.com/photo-1544015759-137f2654333b?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .bird-icon {
+            width: 80px;
+            margin-bottom: 15px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: var(--sia-blue);
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .line {
+            height: 2px;
+            background: var(--sia-gold);
+            flex-grow: 1;
+        }
+
+        /* Fleet Cards dengan Logo Kecil */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 5px;
+            border-left: 5px solid var(--sia-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Printilan logo samar di pojok kartu */
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Singapore_Airlines_Logo_2.svg/1200px-Singapore_Airlines_Logo_2.svg.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th { background: var(--sia-blue); color: var(--sia-gold); padding: 15px; }
+        td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+
+        /* Button */
+        .btn-discord {
+            background: var(--sia-gold);
+            color: var(--sia-blue);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 3px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-discord:hover {
+            background: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--sia-dark);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 5px solid var(--sia-gold);
+        }
+
+        .gold-text { color: var(--sia-gold); }
+    </style>
+</head>
+<body>
+
+    <div class="top-strip"></div>
+
+    <header>
+        <img src="https://d.uguu.se/EWqUyTUW.jpeg">
+    </header>
+
+    <nav>
+        <img src="">
+        <div class="nav-links">
+            <a href="#home">Beranda</a>
+            <a href="#fleet">Armada</a>
+            <a href="#routes">Rute</a>
+            <a href="#discord">Discord Coming Soon</a>
+        </div>
+    </nav>
+
+    <div class="hero" id="home">
+        <img src="https://d.uguu.se/yNeSLuHD.png" class="bird-icon">
+        <h1 style="letter-spacing: 5px;">SINGAPORE AIRLINES</h1>
+        <p style="font-size: 1.2rem; font-weight: 300;">Experience the Gold Standard of PTFS Aviation</p>
+        <br>
+        <a href="https://discord.gg/s6yAwevmp" class="btn-discord">MULAI TERBANG SEKARANG</a>
+    </div>
+
+    <section class="section" id="fleet">
+        <div class="section-title">
+            <h2>Armada Kami</h2>
+            <div class="line"></div>
+       </div>
+        <div class="fleet-grid">
+            <div class="card">
+                <h3 style="color:var(--sia-blue)">Airbus A380-800</h3>
+                <p>Suite kelas dunia di atas awan virtual.</p>
+            </div>
+            <div class="card">
+                <h3 style="color:var(--sia-blue)">Boeing 777-300ER</h3>
+                <p>Kenyamanan maksimal untuk penerbangan jarak jauh.</p>
+            </div>
+            <div class="card">
+                <h3 style="color:var(--sia-blue)">Airbus A350-900</h3>
+                <p>Teknologi tercanggih dengan efisiensi bahan bakar tinggi.</p>            </div>
+            <div class="card">
+            <h3 style="color:var(--sia-blue)">Airbus A340</h3>
+            <p> Airbus A340 adalah pesawat jet berbadan lebar yang diproduksi oleh Airbus, sebuah perusahaan manufaktur pesawat Eropa. A340 adalah pesawat jarak jauh yang dirancang untuk mengangkut penumpang dan kargo.
+
+*Fitur utama:
+- Berbadan lebar
+- 4 mesin
+- Jarak tempuh: 13.500 - 17.000 km
+- Kapasitas: 250-440 penumpang
+- Digunakan untuk penerbangan jarak jauh internasional.</
+</div>
+<div class="card">
+<h3 style="color:var(--sia-blue)">DC-10</h3>
+<p> McDonnell Douglas DC-10 adalah pesawat jet berbadan lebar yang diproduksi oleh McDonnell Douglas (sekarang bagian dari Boeing). DC-10 adalah pesawat jarak jauh yang dirancang untuk mengangkut penumpang dan kargo.
+
+*Fitur utama:
+- Berbadan lebar
+- 3 mesin
+- Jarak tempuh: 9.000 - 11.000 km
+- Kapasitas: 250-380 penumpang
+- Digunakan untuk penerbangan jarak jauh domestik dan internasional
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="routes">
+        <div class="section-title">
+            <div class="line"></div>
+            <h2>Jaringan Rute Global</h2>
+            <div class="line"></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Keberangkatan</th>
+                    <th>Tujuan</th>
+                    <th>Kelas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Changi (SIN)</td>
+                    <td>Heathrow (LHR)</td>
+                    <td>First/Business/Economy</td>
+                </tr>
+                <tr>
+                    <td>Changi (SIN)</td>
+                    <td>Haneda (HND)</td>
+                    <td>Business/Economy</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <img src="https://n.uguu.se/XWrQtQrO.jpeg" 
+        </div>
+        <p>Owner: <span class="gold-text">ICALFEMBOY</span> | Web Dev: <span class="gold-text">Fikk Anxiety T5</span></p>
+        <p style="font-size: 12px; opacity: 0.5;">Web ini dibuat dengan setulus hati🥰.</p>
+    </footer>
+
+</body>
+</html>
